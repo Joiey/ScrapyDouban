@@ -106,5 +106,6 @@ class DoubanDownloaderMiddleware(object):
 class ProxyMiddleware(object):
     def process_request(self, request, spider):
         # curl https://m.douban.com/book/subject/26628811/ -x http://127.0.0.1:8081
-        request.meta['proxy'] = 'http://127.0.0.1:8081'
+        request.meta['proxy'] = 'http://127.0.0.1:5010'
         # request.meta['proxy'] = 'http://10.0.0.164:1080'
+        

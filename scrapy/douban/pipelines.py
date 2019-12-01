@@ -16,7 +16,6 @@ from twisted.internet.defer import DeferredList
 
 cursor = db.connection.cursor()
 
-
 class DoubanPipeline(object):
     def get_subject(self, item):
         sql = 'SELECT id FROM subjects WHERE douban_id=%s' % item['douban_id']
@@ -82,7 +81,7 @@ class DoubanPipeline(object):
 
     def get_comment(self, item):
         sql = 'SELECT * FROM comments WHERE douban_comment_id=%s\
-' % item['douban_comment_id']
+            ' % item['douban_comment_id']
         cursor.execute(sql)
         return cursor.fetchone()
 
